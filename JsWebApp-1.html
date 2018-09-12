@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>1st Js app</title>
+        <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+    </head>
+    <body style="font-family: 'Gamja Flower', cursive;">
+        <div>
+            <div>
+                <div style="text-align: center;">
+                    <h1>BIRTH YEAR CALCULATOR</h1>
+                </div>
+                <form style="text-align: center; margin-top: 150px;">
+                    <input type="number" placeholder="age" id="number" style="height: 30px;"/>
+                    <input type="button" value="Find year" id="button" style="height: 35px; cursor: pointer; color: white; background-color: rebeccapurple;"/>
+                    <p id="year">Year is</p>
+                </form>
+            </div>
+        </div>
+        <script>
+            function calculate () 
+                {   
+                    var number = document.getElementById("number").value;
+                    if (number==""|| number== 0)
+                        {   
+                            window.alert("enter age!");
+                              
+                        }
+                    else 
+                        {
+                                var date = new Date().getFullYear();
+                                var BirthYear= date-number;
+                                document.getElementById("year").style.display="block";
+                                document.getElementById("year").innerHTML="Your Birth Year is" + BirthYear;        
+                        }
+                }
+            document.getElementById("year").style.display="none";
+            document.getElementById("button").onclick= function() { calculate(); };
+        </script>
+    </body>
+</html>
